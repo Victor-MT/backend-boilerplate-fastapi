@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  backend: 
+    build: .
+    image: backend-img
+    container_name: backend-server
+    command: sh -c "cd src && uvicorn main:app --reload --port=8000 --host=0.0.0.0"
+    environment:
+      - HOME=/app
+    env_file:
+      - ./src/core/env/dev.env
+    ports:
+      - 8000:8000
+    volumes:
+      - ./src:/app/src
+    networks:
+      - db_net_service
+      - net_service
+
+networks:
+  net_service:
+  db_net_service:
+    external: true

@@ -1,0 +1,6 @@
+pydantic
+fastapi
+openpyxl
+uvicorn
+sqlalchemy
+python-dotenv
