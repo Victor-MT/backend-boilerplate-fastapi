@@ -9,7 +9,7 @@ services:
     volumes:
       - "./database:/var/lib/postgresql/data"
     env_file:
-      - ../src/core/env/dev.env
+      - ../src/env/dev.env
     networks:
       - net_service
 
