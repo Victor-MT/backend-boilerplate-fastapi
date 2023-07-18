@@ -9,3 +9,11 @@ CREATE TABLE users (
   updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
   deleted_at timestamp
 );
+
+CREATE TABLE logger (
+	id UUID UNIQUE PRIMARY KEY NOT NULL DEFAULT uuid_generate_v4(),
+	registered_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	errors int, 
+	warnings int, 
+	logger varchar
+);
